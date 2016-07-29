@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web I</title>
+        <link rel="stylesheet" type="text/css" href="Utilitario/estilo1.css">
+        <script src="Utilitario/biblioteca.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="ResultNovoPortalAstral"  method="post" accept-charset="UTF-8">
+            <div class="grp0">
+                <h1 class="titulo">Portal do Astral</h1>
+                
+                <div class="grp1">
+                    <img alt="" src="imagens/cabecalho.jpg">
+                </div>            
+            
+                <div class="grp2">
+                    <fieldset>
+                        <p class="subtitulo">Fale Conosco</p>
+                        <p>Localização e iformações para contato</p>
+                        <img alt="" src="imagens/icn1.png"> Edfício das lamentações Av. Homem não chora Brasil <br/><br/>
+                        <img alt="" src="imagens/icn1.png"> (61)9999-5920 <br/><br/>
+                        <img alt="" src="imagens/icn1.png"> (61)1021-3667 <br/><br/>
+                        
+                        <a href="RecuperarSignos">
+                            <p>Sugerir Previsão Astral</p>
+                        </a>
+                    </fieldset>
+                </div>			
+
+                <div class="grp3">			
+                    <fieldset>
+                        <p class="subtitulo">Preencha o formulário a seguir</p>
+                        <label class="label1">Nome:</label> 
+                        <input type="text" name="sNomeForm" size="40" maxlength="100" placeholder="Seu nome completo">
+                        <label class="label1">Data de Nascimento:</label> 
+                        <input type="text" name="sDtNascForm" onkeypress="formatar('##/##/####', this)" size="40" maxlength="10" placeholder="DD/MM/AAAA">
+                        <button class="bts2" type="submit" onClick="return validaCampos()">Enviar</button>
+                        <button class="bts2" type="reset">Limpar</button>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </body>
+</html> 

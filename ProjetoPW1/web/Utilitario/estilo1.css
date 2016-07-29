@@ -1,0 +1,78 @@
+body, input, select, textarea, button, p {
+    font-family: sans-serif;
+    font-size: 1em;
+    background-color : white;
+}
+
+.subtitulo {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    background-color : white;
+}
+
+.subtitulo1 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    background-color : white;
+    text-align: center;
+}
+    
+.titulo {
+    margin:0 auto;
+    position: absolute;	
+    z-index: 1;		
+    display: inline;	
+}
+
+.grp0 {
+    width: 943px;
+    margin: 0 auto;	
+}
+
+.grp1 {
+    display: block;
+    position: relative;
+    z-index: 0;	
+}
+
+.grp2 {
+    display: block;
+    width: 440px;
+    float: left;
+    position: relative;
+}
+
+.grp3 {
+    display: block;
+    width: 500px;
+    float: right;
+    position: relative;
+}
+
+.grp4 {
+    display: block;
+    width: 915px;
+    float: right;
+    position: relative;
+}
+
+.grp5 {
+    text-align: center;
+}
+
+.label1 {
+    margin-bottom: 10px;
+    width: 150px;
+    display: inline-block;	
+    text-align: right;
+}
+
+.bts2 {
+    background: #FFA500;
+    width: 60px;
+    height:30px;
+    position:relative;
+    top:50%;
+    left:50%;
+    color: black;
+}
