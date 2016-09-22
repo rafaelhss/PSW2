@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +16,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Rafael.Soares
+ * @author rafael.soares
  */
-public class Home extends HttpServlet {
+public class Ingredientes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,57 +32,22 @@ public class Home extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Spoleto</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Bem vindo ao Spoleto</h1>");
+        
+        String[] ings = request.getParameterValues("ing");
+        
+        HttpSession sessao = request.getSession(false);
+        if(sessao != null){
+            Pedido p = (Pedido) sessao.getAttribute("ped");
             
-            Pedido pedido = null;
+            List<String> ingredientes = Arrays.asList(ings);
             
-            HttpSession sessao = request.getSession(true);
+            p.setIngredientes(ingredientes);
             
-            if(sessao.isNew()){
-                pedido = new Pedido();
-                sessao.setAttribute("ped", pedido);
-            }
-            else {
-                pedido = (Pedido) sessao.getAttribute("ped");
-            }
-            
-            if(pedido.getMolho() == null){
-                out.println("<h2><a href=\"molhos.html\">Escolha um Molho</a></h2>");
-            } else {
-                out.println("<h2>Molho escolhido: " + pedido.getMolho() +
-                           "<a href=\"molhos.html\">(Trocar)</a></h2>");
-            }
-            
-            if(pedido.getMassa()== null){
-                out.println("<h2><a href=\"massas.html\">Escolha uma Massa</a></h2>");
-            } else {
-                out.println("<h2>Massa escolhida: " + pedido.getMassa() +
-                           "<a href=\"massas.html\">(Trocar)</a></h2>");
-            }
-            
-            
-            if(pedido.getIngredientes() == null){
-                out.println("<h2><a href=\"ingredientes.html\">Escolha Ingredientes</a></h2>");
-            } else {
-                out.println("<h2>Ingredientes escolhidos:</h2>");
-                //for(int count = 0; count < pedido.getIngredientes().size(); count++)
-                for(String ingrediente : pedido.getIngredientes()){
-                    out.println("<h3>"+ ingrediente +"</h3>");    
-                }
-                out.println("<h2><a href=\"ingredientes.html\">Trocar</a></h2>");
-            }
-            
-            out.println("</body>");
-            out.println("</html>");
+            sessao.setAttribute("ped", p);
         }
+        request.getRequestDispatcher("Home")
+                    .forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

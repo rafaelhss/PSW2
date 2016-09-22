@@ -8,6 +8,14 @@
         <servlet-name>Molho</servlet-name>
         <servlet-class>Molho</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Ingredientes</servlet-name>
+        <servlet-class>Ingredientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Massa</servlet-name>
+        <servlet-class>Massa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>Molho</servlet-name>
         <url-pattern>/Molho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ingredientes</servlet-name>
+        <url-pattern>/Ingredientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Massa</servlet-name>
+        <url-pattern>/Massa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
