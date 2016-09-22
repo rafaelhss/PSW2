@@ -35,19 +35,30 @@ public class Ingredientes extends HttpServlet {
         
         String[] ings = request.getParameterValues("ing");
         
-        HttpSession sessao = request.getSession(false);
-        if(sessao != null){
-            Pedido p = (Pedido) sessao.getAttribute("ped");
-            
-            List<String> ingredientes = Arrays.asList(ings);
-            
-            p.setIngredientes(ingredientes);
-            
-            sessao.setAttribute("ped", p);
+        if(ings.length > 8){
+            //erro
+            request.getRequestDispatcher("erroAcesso.html").forward(request, response);
         }
-        request.getRequestDispatcher("Home")
-                    .forward(request, response);
-        
+        else {
+            
+            if(ings.length > 4 && !request.isUserInRole("PREMIUM")){
+                //erro
+                request.getRequestDispatcher("erroAcesso.html").forward(request, response);
+            } else {
+                HttpSession sessao = request.getSession(false);
+                if(sessao != null){
+                    Pedido p = (Pedido) sessao.getAttribute("ped");
+
+                    List<String> ingredientes = Arrays.asList(ings);
+
+                    p.setIngredientes(ingredientes);
+
+                    sessao.setAttribute("ped", p);
+                }
+                request.getRequestDispatcher("Home")
+                            .forward(request, response);
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
