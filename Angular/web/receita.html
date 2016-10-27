@@ -1,0 +1,68 @@
+<!-- Barra de progresso-->
+         <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="" aria-valuemin="0"
+               aria-valuemax="60" style="width:60%">
+            </div>
+         </div>
+
+
+         <form  name="form02" >
+
+            <!--Campo nome da receita-->
+            <div class="form-group">
+               <label class="control-label" for="nomeReceita">Nome da receita:</label>
+               <input type="text" class="form-control" id="nomeReceita" placeholder="Insira o nome aqui" required>
+            </div>
+
+            <!--Campo valor receita-->
+            <div class="form-group">
+               <label class="control-label" for="valorReceita">Qual é o valor da receita?</label>
+               <input type="number" class="form-control" id="valorReceita" placeholder="Digite o valor aqui" required>
+            </div>
+
+            <!--Campo moeda-->
+            <div class="form-group">
+                <h4>Moeda</h4> 
+
+               <label class="radio-inline">
+
+               <label class="radio-inline">
+               <input type="radio" name="optradio" required>Real
+               </label>
+               <label class="radio-inline">
+               <input type="radio" name="optradio">Dólar
+               </label>
+               <label class="radio-inline">
+               <input type="radio" name="optradio">Euro
+               </label>
+               <label class="radio-inline">
+               <input type="radio" name="optradio">Peso
+               </label>
+               </div>
+
+               <!--Campo categoria-->
+               <div class="form-group">
+                  <h4>Categoria</h4>
+                  <label class="radio-inline">
+
+               <input type="radio" name="optradio" required>Fixo
+               </label>
+               <label class="radio-inline">
+               <input type="radio" name="optradio">Extraordinario
+               </label>
+               </div>
+
+             <!--Campo Data receita-->
+            <div class="form-group">
+               <label class="control-label" for="dt_receita">Data:</label>
+               <input type="datetime-local" class="form-control" id="dt_receita" required>
+
+               <!--Botão próximo-->
+               <div class="pager ">
+                  <ul class="pager ">
+                     <button type="submit" class="btn btn-default" ><a href="02-cadastroUsuario.html ">Voltar</a></button>
+                    <button type="submit" class="btn btn-default"  >Salvar</button>
+                  </ul>
+               </div>
+            </div>
+         </form>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+
+        <style>
+
+         .jumbotron {
+         background-color: dimgray;
+         }
+         .jumbotron h1 {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         text-align: center;
+         color: white;
+         }
+
+         .container h4::first-letter {
+            color: mediumseagreen;
+        }
+         .jumbotron h1::first-letter {
+         color: mediumseagreen;
+         }
+         .container label::first-letter {
+         color: mediumseagreen;
+         }
+         .container {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         margin-top: 40px;
+         }
+
+         
+
+
+      </style>
+</head>
+
+<body>
+<script>
+	//variavel que representa a aplicacao
+	var app = angular.module("testeApp", ['ngRoute']);
+	app.controller('testectrl',function($scope){
+		$scope.variavelA = 0;
+
+		$scope.imagemUrl = "https://upload.wikimedia.org/wikipedia/commons/1/1f/Batata.JPG";
+
+		$scope.somar = function(){
+			$scope.variavelA++;
+		}
+
+		$scope.mostrar = function(){
+			$scope.visivel = true;
+		}
+
+		$scope.esconder = function(){
+			$scope.visivel = false;
+		}
+		$scope.banana = function(){
+			$scope.imagemUrl = "https://upload.wikimedia.org/wikipedia/commons/4/44/Bananas_white_background_DS.jpg";
+		}
+	});	
+
+	app.config(function($routeProvider){
+            $routeProvider.when('/receita',{
+                    templateUrl: 'receita.html'
+            }).when('/despesa',{
+                    templateUrl:'despesa.html'
+            }).when('/reserva',{
+                    templateUrl:'reserva.html'
+            }).otherwise({
+                templateUrl: 'home.html'
+            });
+	});
+
+
+</script>
+
+
+<div ng-app="testeApp">
+    <div ng-controller="testectrl">
+
+        <!--Espaço grande para dar ênfase-->
+        <div class="jumbotron">
+           <h1>Econommize</h1>
+        </div>
+        
+
+        <!--Fomulário Cadastrar Receita-->
+        <div class="container">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cadastrar
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#/receita">Receita</a></li>
+                  <li><a href="#/despesa">Despesa</a></li>
+                  <li><a href="#/reserva">Reserva</a></li>
+                </ul>
+            </div>
+            
+            <ng-view></ng-view>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

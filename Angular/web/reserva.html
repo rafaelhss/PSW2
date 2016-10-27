@@ -1,0 +1,59 @@
+
+		 <!-- Barra de progresso-->
+         <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="" aria-valuemin="0"
+               aria-valuemax="80" style="width:80%">
+            </div>
+         </div>
+
+		<form name="form04">
+			<!--Campo Reserva-->
+			<div class="fomr-group">
+				<p>Você possui reserva financeira?</p>
+
+				
+				<label class="radio-inline">
+                 <input type="radio" name="optradio" id="Sim" required>Sim <span class="glyphicon glyphicon-thumbs-up"></span>
+               </label>
+					<label class="radio-inline">
+                 <input type="radio" name="optradio" id="Não">Não <span class="glyphicon glyphicon-thumbs-down"></span>
+                </label>
+				
+			</div>
+			<br>
+			<!--Campo valor reserva-->
+			<div class="form-group" id="btd_valor">
+				<label class="control-label" for="valorDespesa">Qual é o valor da reserva?</label>
+				<input type="number" class="form-control" id="valorDespesa" placeholder="Digite o valor aqui" required>
+			</div>
+			<!--Campo moeda-->
+			<div class="form-group" id="moeda">
+                            <h4>Moeda</h4>
+                
+                <label class="radio-inline">
+
+				<label class="radio-inline">
+            <input type="radio" name="optradio"  id ="real" required>Real
+            </label>
+				<label class="radio-inline">
+            <input type="radio" name="optradio" id="dolar">Dólar
+            </label>
+				<label class="radio-inline">
+            <input type="radio" name="optradio" id="euro">Euro
+            </label>
+				<label class="radio-inline">
+            <input type="radio" name="optradio" id="peso">Peso
+            </label>
+			</div>
+
+       
+            <!--Botão próximo-->
+            <div class="pager ">
+               <ul class="pager ">
+                  <button type="submit" class="btn btn-default" ><a href="06-list_Despesa.html">Voltar</a></button>
+                 <button type="submit" class="btn btn-default"  >Salvar</button>
+               </ul>
+            </div>
+         </div>
+      </div>
+            </form>
